@@ -1,4 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// https://github.com/Alberto-Kali/CapeR/releases/tag/1.0.0
+
+
+// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
 
@@ -24,8 +27,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string linessd = Console.ReadLine();
-        Election(linessd);
+        //string linessd = Console.ReadLine();
+        //TrueElection(linessd);
 
     }
 
@@ -34,7 +37,7 @@ internal class Program
         System.Console.WriteLine(string.Join(" ",ankap));
     }
 
-    public static bool Election(string line)
+    public static bool TrueElection(string line)
     {
         int[] VotesFromLine = line.Split(' ').Select(x => int.Parse(x)).ToArray();
         if (VotesFromLine.Sum(x => x) > VotesFromLine.Length / 2)
@@ -49,8 +52,8 @@ internal class Program
         }
     }
 
-    public static bool TrueElection(bool x, bool y, bool z)
+    public static bool Election(bool x, bool y, bool z)
     {
-        return x && y && z;
+        return (x && y) || (x && z) || (y && z);
     }
 }
